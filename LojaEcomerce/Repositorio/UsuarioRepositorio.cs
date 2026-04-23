@@ -1,10 +1,11 @@
-﻿using LojaEcomerce.Models;
+﻿using LojaEcomerce.Interfaces;
+using LojaEcomerce.Models;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography.X509Certificates;
 
 namespace LojaEcomerce.Repositorio
 {
-    public class UsuarioRepositorio
+    public class UsuarioRepositorio : IUsuarioRepositorio
     {
         // variavel somente leitura e privada para receber a conexao do banco
         private readonly string _connectionString;
@@ -15,7 +16,7 @@ namespace LojaEcomerce.Repositorio
 
         }
         //metodo para validar o login
-        public LoginViewModel Validar(String Email, String Senha)
+        public LoginViewModel Validar(string Email, string Senha)
         {
 
             using var conn = new MySqlConnection(_connectionString);
