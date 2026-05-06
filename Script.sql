@@ -18,3 +18,4 @@ Select * from tb_Usuario;
 
 -- inserindo dados na tabela do banco de dados
 Insert into tb_Usuario(Email,Senha,Nome,Nivel)Values('Admin@eamil.com','12345678','Administrador','Admin');
+Insert into tb_Usuario(Email,Senha,Nome,Nivel)Values('Igor@email.com','1212','Igor','Admin');
