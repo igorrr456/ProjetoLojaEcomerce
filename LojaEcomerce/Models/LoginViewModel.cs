@@ -8,4 +8,5 @@
         public string Senha { get; set; } = string.Empty;
         public string Nivel { get; set; } = string.Empty;
     }
+    
 }
