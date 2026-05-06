@@ -53,5 +53,28 @@ namespace LojaEcomerce.Controllers
 
             return View();
         }
+        [HttpGet]
+        public IActionResult CriarConta() => View();
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult CriarConta(LoginViewModel usuario)
+        {
+            if(ModelState.IsValid)
+            {
+                _usuarioRepositorio.CriarConta (usuario);
+                return RedirectToAction("login");
+            }
+            return View(usuario);
+        }
+
+
+
+
+        public async Task<IActionResult> Sair()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
+        }
     }
 }
