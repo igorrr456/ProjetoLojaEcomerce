@@ -12,7 +12,7 @@
 		<div>
 			@*Estrutura do cabeçalho*@
 			<div>
-				<h3>Login</h3>
+				<h3 class="">Login</h3>
 			</div>
 			<section>
 				<form asp-action="Login" method="post">
@@ -22,13 +22,22 @@
 						<input asp-for="Email" placeholder="email@email.com" />
 						<span asp-validation-for="Email"></span>
 					</div>
+				</br>
 					<div>
 						<label asp-for="Senha"></label>
 						<input asp-for="Senha" placeholder="Digite sua Senha" type="password" />
 						<span asp-validation-for="Senha"></span>
 					</div>
 					<div>
-						<button>Entrar</button>
+				</br>
+						<button class="btn-success">Entrar</button>
+					</div>
+					<div>
+						</br>
+						<p>Ainda não possui conta?</p>
+						<a asp-action="CriarConta" asp-controller="Usuario">
+							Criar uma nova conta
+						</a>
 					</div>
 				</form>
 
